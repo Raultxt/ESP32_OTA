@@ -1,10 +1,12 @@
 import machine
 import time
 
-led = machine.Pin(2, machine.Pin.OUT)  # Pin 2 suele ser el LED en el ESP32
+print("Ejecutando main.py...")  # Mensaje de depuración para verificar
+
+led = machine.Pin(2, machine.Pin.OUT)  # Cambia 2 por el pin correcto si es necesario
 
 while True:
     led.value(1)  # Enciende el LED
-    time.sleep(5)  # Espera 1 segundo
+    time.sleep(1)  # Espera 1 segundo
     led.value(0)  # Apaga el LED
-    time.sleep(5)  # Espera otro segundo
+    time.sleep(1)  # Espera otro segundo
