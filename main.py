@@ -1,10 +1,11 @@
-import machine
-import time
+from machine import Pin
+from time import sleep
 
-led = machine.Pin(2, machine.Pin.OUT)  # Pin 2 suele ser el LED en el ESP32
+# Definir el pin donde está conectado el LED
+led = Pin(2, Pin.OUT)  # GPIO 2 como salida
 
 while True:
-    led.value(1)  # Enciende el LED
-    time.sleep(1)  # Espera 1 segundo
-    led.value(0)  # Apaga el LED
-    time.sleep(1)  # Espera otro segundo
+    led.on()  # Encender el LED
+    sleep(1)  # Esperar 1 segundo
+    led.off()  # Apagar el LED
+    sleep(1)  # Esperar 1 segundo
